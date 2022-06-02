@@ -34,7 +34,7 @@ Here we have trained Bengali NER model for [wikiann](https://huggingface.co/data
     - F-score (micro) 0.7751
     - F-score (macro) 0.775
     - Accuracy 0.7364
-- For details log check [here]()
+- For details log check [here](https://github.com/sagorbrur/bnflair/tree/main/models/ner)
 
 ## Usage
 ### Embeddings
