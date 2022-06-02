@@ -46,7 +46,7 @@ from flair.data import Sentence
 sentence = Sentence('রামপ্রসাদ সেন জন্মগ্রহণ করেছিলেন গাঙ্গেয় পশ্চিমবঙ্গের এক তান্ত্রিক বৈদ্যব্রাহ্মণ পরিবারে।')
 
 # init embeddings from your trained LM
-char_lm_embeddings = FlairEmbeddings('bnflair/models/embeddings/wikipedia/bnwiki_backward.pt')
+char_lm_embeddings = FlairEmbeddings('models/embeddings/wikipedia/bnwiki_forward.pt')
 
 # embed sentence
 char_lm_embeddings.embed(sentence)
@@ -59,8 +59,8 @@ char_lm_embeddings.embed(sentence)
 from flair.embeddings import StackedEmbeddings
 
 embedding_types = [
-    FlairEmbeddings('bnflair/models/embeddings/wikipedia/bnwiki_forward.pt'),
-    FlairEmbeddings('bnflair/models/embeddings/wikipedia/bnwiki_forward.pt')
+    FlairEmbeddings('models/embeddings/wikipedia/bnwiki_forward.pt'),
+    FlairEmbeddings('models/embeddings/wikipedia/bnwiki_backward.pt')
 ]
 
 embeddings = StackedEmbeddings(embeddings=embedding_types)
@@ -74,7 +74,7 @@ from flair.data import Sentence
 from flair.models import SequenceTagger
 
 text = "কবিরঞ্জন রামপ্রসাদ সেন (১৭১৮ বা ১৭২৩ – ১৭৭৫) ছিলেন অষ্টাদশ শতাব্দীর এক বিশিষ্ট বাঙালি শাক্ত কবি ও সাধক।"
-ner_model = "bnflair/models/ner/wikiann.pt"
+ner_model = "models/ner/wikiann.pt"
 
 sentence = Sentence(text)
 ner_model.predict(sentence)
