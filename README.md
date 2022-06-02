@@ -74,7 +74,9 @@ from flair.data import Sentence
 from flair.models import SequenceTagger
 
 text = "কবিরঞ্জন রামপ্রসাদ সেন (১৭১৮ বা ১৭২৩ – ১৭৭৫) ছিলেন অষ্টাদশ শতাব্দীর এক বিশিষ্ট বাঙালি শাক্ত কবি ও সাধক।"
-ner_model = "models/ner/wikiann.pt"
+ner_model_path = "models/ner/wikiann.pt"
+
+ner_model = SequenceTagger.load(ner_model_path)
 
 sentence = Sentence(text)
 ner_model.predict(sentence)
